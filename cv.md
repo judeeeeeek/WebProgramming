@@ -6,7 +6,14 @@
 
 ---
 
-**Programmer**
+## Navigation
+
+- [Contacts](#1)
+- [About Me](#2)
+- [Sample Code](#3)
+- [Work Experience](#4)
+
+## Contacts
 
 - Mob number: +375(44)7041008  
 - Email: mrfreez4ik@gmail.com  
