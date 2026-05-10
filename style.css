@@ -56,24 +56,21 @@ input {
 }
 
 .site-header {
-  position: relative;
-  z-index: 20;
-  height: 85px;
+  min-height: 85px;
   border-bottom: 0;
   background: var(--white);
   box-shadow: 0 1px 8px rgba(83, 109, 122, 0.29);
 }
 
 .header-inner {
-  position: relative;
-  display: block;
-  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  min-height: 85px;
 }
 
 .logo {
-  position: absolute;
-  left: 0;
-  top: 15px;
+  flex: 0 0 auto;
 }
 
 .logo img {
@@ -83,22 +80,24 @@ input {
 }
 
 .site-nav {
-  position: absolute;
-  left: 185px;
-  top: 15px;
-  display: block;
-  width: 588px;
-  height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  flex: 1 1 auto;
   padding: 0;
+   
+}
+.site-nav a:not(:first-child) {
+  transform: translate(19px, -2px);
 }
 
 .site-nav a,
 .signup-link {
-  position: relative;
-  display: block;
-  height: 37px;
-  overflow: hidden;
-  color: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 37px;
+  color: var(--ink);
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -107,108 +106,29 @@ input {
 
 .site-nav span,
 .signup-link span {
-  position: absolute;
   color: var(--ink);
-  top: 7px;
-}
-
-.site-nav a {
-  position: absolute;
-  top: 9px;
-}
-
-.site-nav a:nth-child(1) {
-  left: 0;
-  width: 61px;
-}
-
-.site-nav a:nth-child(2) {
-  left: 91px;
-  width: 102px;
-}
-
-.site-nav a:nth-child(3) {
-  left: 223px;
-  width: 61px;
-}
-
-.site-nav a:nth-child(4) {
-  left: 314px;
-  width: 86px;
-}
-
-.site-nav a:nth-child(5) {
-  left: 430px;
-  width: 128px;
-}
-
-.site-nav a:nth-child(1) span {
-  left: 0;
-}
-
-.site-nav a:nth-child(2) span,
-.site-nav a:nth-child(3) span,
-.site-nav a:nth-child(4) span,
-.site-nav a:nth-child(5) span {
-  left: 30px;
 }
 
 .site-nav img {
-  position: absolute;
+  flex: 0 0 auto;
   width: 18px;
   height: 18px;
   object-fit: contain;
 }
 
-.site-nav a:nth-child(2) img {
-  left: 0;
-  top: 7px;
-  width: 17px;
-  height: 17px;
-}
-
-.site-nav a:nth-child(3) img {
-  left: 11px;
-  top: 9px;
-  width: 19px;
-  height: 19px;
-}
-
-.site-nav a:nth-child(4) img {
-  left: 8px;
-  top: 7px;
-  width: 19px;
-  height: 19px;
-}
-
-.site-nav a:nth-child(5) img {
-  left: 4px;
-  top: 8px;
-}
-
 .signup-link {
-  position: absolute;
-  right: 0;
-  top: 20px;
-  width: 113px;
+  flex: 0 0 auto;
   height: 44px;
+   transform: translateX(-15px);
 }
 
 .signup-link img {
-  position: absolute;
-  left: 6px;
-  top: 10px;
-  width: 32px;
-  height: 22px;
+  width: 40px;
+  height: 30px;
   border-radius: 5px;
   background: var(--yellow);
   box-shadow: 5px 5px 0 #fead1c;
   object-fit: contain;
-}
-
-.signup-link span {
-  left: 50px;
-  top: 12px;
 }
 
 .menu-toggle {
@@ -410,16 +330,16 @@ h3 {
   content: "";
   width: 0;
   height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 18px solid var(--ink);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 13px solid var(--ink);
 }
 
 .promo {
-  position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: space-between;
+  gap: 24px;
   min-height: 112px;
   margin-top: 100px;
   padding: 0 40px 0 30px;
@@ -430,8 +350,8 @@ h3 {
 
 .promo-pattern,
 .newsletter-pattern {
-  position: absolute;
-  inset: 0;
+  grid-column: 1 / -1;
+  grid-row: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -440,14 +360,16 @@ h3 {
 
 .promo-content,
 .promo .button {
-  position: relative;
+  grid-row: 1;
   z-index: 1;
 }
 
 .promo-content {
+  grid-column: 1;
   display: flex;
   align-items: center;
   gap: 15px;
+  transform: translate(-1px, -5px); 
 }
 
 .promo-content img {
@@ -464,6 +386,7 @@ h3 {
 }
 
 .promo .button-small {
+  grid-column: 2;
   flex: 0 0 111px;
 }
 
@@ -487,23 +410,27 @@ h3 {
 }
 
 .image-wrap {
-  position: relative;
+  display: grid;
   overflow: hidden;
   border-radius: 10px 10px 0 0;
 }
 
 .image-wrap img {
+  grid-column: 1;
+  grid-row: 1;
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
 .image-wrap span {
-  position: absolute;
-  top: 15px;
-  left: 15px;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: start;
+  justify-self: start;
   min-width: 54px;
   min-height: 30px;
+  margin: 15px;
   padding: 5px 8px;
   border-radius: 3px;
   background: rgba(29, 47, 56, 0.82);
@@ -528,14 +455,13 @@ h3 {
 }
 
 .newsletter {
-  position: relative;
   display: grid;
   grid-template-columns: 500px 500px;
   gap: 50px;
   align-items: start;
   min-height: 425px;
-  margin-top: 99px;
-  margin-bottom: 90px;
+  margin-top: 102px;
+  margin-bottom: 100px;
   padding: 50px;
   overflow: hidden;
   border-radius: 10px;
@@ -544,14 +470,23 @@ h3 {
 
 .newsletter-visual,
 .newsletter-copy {
-  position: relative;
+  grid-row: 1;
   z-index: 1;
+}
+
+.newsletter-visual {
+  grid-column: 1;
+}
+
+.newsletter-copy {
+  grid-column: 2;
 }
 
 .newsletter-visual img {
   width: 500px;
   height: 325px;
   object-fit: contain;
+  transform: translateY(-8px); 
 }
 
 .newsletter-copy {
@@ -636,14 +571,16 @@ h3 {
 
 .site-footer {
   background: var(--footer-bg);
-  
+  min-height: 588px;
+  padding-top: 20px;
 }
 
 .footer-main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  padding: 60px 0;
+  min-height: 485px;
+  padding: 35px 0 0;
 }
 
 .footer-logo {
@@ -740,7 +677,7 @@ h3 {
 }
 
 .copyright {
-  margin: 17px 0 0;
+  margin: 27px 0 0;
   padding-top: 20px;
   border-top: 1px solid var(--soft);
   color: var(--ink);
@@ -752,7 +689,8 @@ h3 {
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  padding: 20px 0;
+  height: 43px;
+  padding: 30px 0 0;
   border-top: 1px solid var(--soft);
   color: var(--ink);
   font-size: 12px;
@@ -765,22 +703,26 @@ h3 {
 }
 
 @media (max-width: 1180px) {
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 14px 24px;
+    padding: 14px 0;
+  }
+
+  .logo {
+    margin-right: auto;
+  }
+
   .menu-toggle {
-    position: absolute;
-    top: 21px;
-    right: 0;
     display: block;
+    order: 3;
   }
 
   .site-nav {
-    position: absolute;
-    left: 20px;
-    right: 20px;
-    top: 85px;
     display: none;
     gap: 8px;
-    width: auto;
-    height: auto;
+    flex: 0 0 100%;
+    order: 4;
     padding: 18px;
     border: 1px solid var(--line);
     border-radius: 6px;
@@ -795,19 +737,8 @@ h3 {
   }
 
   .site-nav a {
-    position: relative;
-    left: auto !important;
-    top: auto;
-    width: 100% !important;
+    width: 100%;
     height: 37px;
-  }
-
-  .site-nav span {
-    left: 30px;
-  }
-
-  .site-nav a:nth-child(1) span {
-    left: 0;
   }
 
   .hero-panel,
@@ -859,7 +790,11 @@ h3 {
   }
 
   .site-header {
-    height: 72px;
+    min-height: 72px;
+  }
+
+  .header-inner {
+    min-height: 72px;
   }
 
   .logo img {
@@ -867,15 +802,11 @@ h3 {
     height: auto;
   }
 
-  .site-nav {
-    top: 72px;
-  }
-
   .signup-link {
     font-size: 0;
-    top: 14px;
-    right: 56px;
     width: 44px;
+    gap: 0;
+    justify-content: center;
   }
 
   .signup-link span {
@@ -894,6 +825,20 @@ h3 {
 
   .hero-media {
     order: 2;
+  }
+
+  .newsletter-visual,
+  .newsletter-copy,
+  .newsletter-pattern {
+    grid-column: 1;
+  }
+
+  .newsletter-visual {
+    grid-row: 1;
+  }
+
+  .newsletter-copy {
+    grid-row: 2;
   }
 
   .hero-media img,
@@ -929,9 +874,14 @@ h3 {
 
   .promo {
     align-items: flex-start;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 18px;
     padding: 24px;
+  }
+
+  .promo-content,
+  .promo .button-small {
+    grid-column: 1;
   }
 
   .promo p {
