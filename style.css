@@ -947,3 +947,426 @@ h3 {
     height: 80px;
   }
 }
+
+@media (min-width: 521px) and (max-width: 768px) {
+  .container {
+    width: min(720px, calc(100vw - 48px));
+  }
+
+  .site-header,
+  .header-inner {
+    min-height: 78px;
+  }
+
+  .header-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 14px 20px;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    order: initial;
+    padding: 0 0 12px;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .site-nav a:not(:first-child),
+  .signup-link {
+    transform: none;
+  }
+
+  .site-nav a {
+    width: auto;
+    height: auto;
+  }
+
+  .signup-link {
+    width: auto;
+    font-size: 14px;
+    gap: 6px;
+  }
+
+  .signup-link span {
+    display: inline;
+  }
+
+  .hero-panel,
+  .newsletter {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    min-height: 0;
+    padding: 30px;
+  }
+
+  .hero-copy,
+  .hero-media,
+  .newsletter-copy,
+  .newsletter-visual {
+    grid-column: 1;
+    width: 100%;
+  }
+
+  .hero-media {
+    order: 0;
+  }
+
+  .hero-media img,
+  .newsletter-visual img {
+    width: 100%;
+    height: auto;
+    max-height: 390px;
+    object-fit: contain;
+  }
+
+  h1 {
+    max-width: 620px;
+    font-size: 38px;
+    line-height: 44px;
+  }
+
+  h2 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-post p br,
+  .review-card p br,
+  .footer-articles p br {
+    display: none;
+  }
+
+  .post-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .small-post {
+    grid-template-columns: 1fr;
+    align-content: start;
+  }
+
+  .small-post img {
+    width: 100%;
+    height: 150px;
+  }
+
+  .small-post h3 {
+    max-width: none;
+  }
+
+  .promo {
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    min-height: 120px;
+    padding: 24px 28px;
+  }
+
+  .promo-content {
+    transform: none;
+  }
+
+  .promo p {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .review-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .review-card:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .newsletter {
+    margin-top: 72px;
+    margin-bottom: 72px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+    gap: 34px;
+  }
+
+  .footer-browse {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    height: auto;
+    padding-bottom: 24px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    width: calc(100vw - 20px);
+  }
+
+  .site-header,
+  .header-inner {
+    min-height: 64px;
+  }
+
+  .header-inner {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .logo img {
+    width: 112px;
+  }
+
+  .menu-toggle {
+    width: 38px;
+    height: 38px;
+  }
+
+  .signup-link {
+    width: 38px;
+    height: 38px;
+    transform: none;
+  }
+
+  .signup-link img {
+    width: 32px;
+    height: 26px;
+  }
+
+  .site-nav {
+    padding: 14px;
+  }
+
+  .site-nav a:not(:first-child) {
+    transform: none;
+  }
+
+  .hero {
+    padding-top: 20px;
+  }
+
+  .hero-panel,
+  .newsletter {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    min-height: 0;
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .hero-copy,
+  .hero-media,
+  .newsletter-copy,
+  .newsletter-visual {
+    grid-column: 1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-media img,
+  .newsletter-visual img {
+    width: 100%;
+    height: auto;
+    max-height: 240px;
+    object-fit: contain;
+    transform: none;
+  }
+
+  .eyebrow {
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  h1 {
+    max-width: none;
+    font-size: 26px;
+    line-height: 31px;
+  }
+
+  h2,
+  .newsletter-copy h2,
+  .footer-main h2 {
+    font-size: 25px;
+    line-height: 30px;
+  }
+
+  h3,
+  .featured-post h3,
+  .review-card h3 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .hero-copy p:not(.eyebrow),
+  .newsletter-copy p {
+    margin: 16px 0 18px;
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  .section,
+  .reviews-section {
+    padding-top: 44px;
+  }
+
+  .blog-grid,
+  .post-list,
+  .review-grid,
+  .footer-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .featured-post img,
+  .small-post img,
+  .image-wrap img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .featured-post p br,
+  .review-card p br,
+  .footer-articles p br {
+    display: none;
+  }
+
+  .blog-section .text-link,
+  .reviews-section .text-link {
+    margin-top: 28px;
+  }
+
+  .promo {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    min-height: 0;
+    margin-top: 58px;
+    padding: 18px;
+    border-radius: 8px;
+  }
+
+  .promo-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transform: none;
+  }
+
+  .promo-content,
+  .promo .button-small {
+    grid-row: auto;
+  }
+
+  .promo-content img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .promo p {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .promo .button-small {
+    width: 100%;
+  }
+
+  .review-card {
+    min-height: 0;
+  }
+
+  .review-card h3,
+  .review-card p {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .newsletter {
+    margin-top: 58px;
+    margin-bottom: 58px;
+  }
+
+  .newsletter-title {
+    align-items: flex-start;
+  }
+
+  .round-icon {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .round-icon img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .signup-form input,
+  .form-actions button {
+    height: 46px;
+  }
+
+  .footer-main {
+    padding-top: 28px;
+    padding-bottom: 34px;
+  }
+
+  .footer-about p,
+  .footer-articles p {
+    max-width: none;
+  }
+
+  .footer-articles article {
+    grid-template-columns: 96px 1fr;
+    gap: 10px;
+    min-height: 74px;
+  }
+
+  .footer-articles img {
+    width: 96px;
+    height: 74px;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr 76px;
+  }
+
+  .footer-bottom {
+    height: auto;
+    gap: 10px;
+    padding: 20px 0 24px;
+  }
+
+  .footer-bottom div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+  }
+
+  .footer-bottom a,
+  .footer-bottom span {
+    margin-right: 0;
+  }
+}
