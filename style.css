@@ -1387,3 +1387,69 @@ h3 {
   border-color: var(--green);
   transition: border-color 0.3s ease;
 }
+.hero-copy::before {
+  display: none;
+}
+
+.eyebrow::after {
+  content: "★";
+  color: var(--yellow);
+  font-size: 22px;
+  margin-left: 12px;         
+  opacity: 0.8;
+  vertical-align: middle;    
+  display: inline-block;
+}
+
+градиентный оверлей для промо
+.promo {
+  position: relative;
+  overflow: hidden;
+}
+.promo::after {
+  content: "";
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+улучшенный плейсхолдер 
+.signup-form input::placeholder,
+.search-form input::placeholder {
+  font-style: italic;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.signup-form input:focus::placeholder {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
+ глобальное выделение текста 
+::selection {
+  background: var(--green);
+  color: var(--white);
+}
+
+буквица для заголовков постов 
+.featured-post h3::first-letter {
+  font-family: var(--display);
+  font-size: 1.03em;
+  color: var(--green-dark);
+  float: left;
+  margin-right: 1px;
+  line-height: 1;
+}
+
+стрелка для текстовых ссылок
+.text-link::after {
+  content: "→";
+  margin-left: 6px;
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.text-link:hover::after {
+  transform: translateX(5px);
+}
