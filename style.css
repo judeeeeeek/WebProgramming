@@ -1351,6 +1351,9 @@ h3 {
     margin-right: 0;
   }
 }
+
+
+
 навигация 
 .site-nav a:hover {
   color: var(--green);
@@ -1387,18 +1390,32 @@ h3 {
   border-color: var(--green);
   transition: border-color 0.3s ease;
 }
+
+
+
+
 .hero-copy::before {
   display: none;
+}
+
+@keyframes spin-star {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .eyebrow::after {
   content: "★";
   color: var(--yellow);
   font-size: 22px;
-  margin-left: 12px;         
+  margin-left: 12px;
   opacity: 0.8;
-  vertical-align: middle;    
-  display: inline-block;
+  vertical-align: middle;
+  display: inline-block; 
+  animation: spin-star 2s linear infinite;
 }
 
 градиентный оверлей для промо
@@ -1567,7 +1584,7 @@ h3 {
   transform: translateY(-4px);
 }
 
-/* пульсация границы поиска с cubic-bezier */
+/* пульсация границы поиска */
 @keyframes borderPulse {
   0%, 100% { border-color: #aabcc5; }
   50% { border-color: var(--muted); }
