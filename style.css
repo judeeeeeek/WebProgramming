@@ -1453,3 +1453,142 @@ h3 {
 .text-link:hover::after {
   transform: translateX(5px);
 }
+
+
+
+/* плавное появление контента */
+@keyframes fadeSlideIn {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.hero-copy {
+  animation: fadeSlideIn 1s ease-out forwards;
+}
+
+ пульсация кнопки при наведении 
+.button {
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.3s ease;
+}
+.button:hover {
+  transform: scale(1.04);
+  background-color: var(--green-dark);
+}
+
+вращение логотипа
+.logo:hover img {
+  transform: rotate(360deg);
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+плавный сдвиг навигации 
+.site-nav a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/*  размытие/четкость изображений */
+@keyframes blurCycle {
+  0%, 100% { filter: blur(0px); }
+  50% { filter: blur(2px); }
+}
+.featured-post:hover img {
+  animation: blurCycle 1.5s ease-in-out infinite;
+}
+
+изменение фона полей ввода 
+.signup-form input {
+  transition: background-color 0.4s ease, border-color 0.3s ease;
+}
+.signup-form input:focus {
+  background-color: #f8fbfc;
+}
+
+/*  увеличение тени карточек */
+@keyframes shadowGrow {
+  0% { box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+  100% { box-shadow: 0 12px 28px rgba(29,47,56,0.15); }
+}
+.review-card:hover {
+  animation: shadowGrow 0.6s ease forwards;
+}
+
+/*  движение градиента в hero */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.hero-panel {
+  background: linear-gradient(135deg, var(--hero-bg), #cfdce4, var(--hero-bg));
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+/*  изменение высоты промо-блока */
+@keyframes heightPulse {
+  0%, 100% { min-height: 112px; }
+  50% { min-height: 125px; }
+}
+.promo:hover {
+  animation: heightPulse 0.8s ease-in-out;
+}
+
+/* искажение картинки в рассылке */
+.newsletter-visual img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.newsletter-visual:hover img {
+  transform: skewX(-3deg) scale(1.02);
+}
+
+/*  сдвиг по вертикали с отскоком */
+@keyframes translateYBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.signup-link:hover img {
+  animation: translateYBounce 0.9s ease-in-out infinite;
+}
+
+/*  изменение насыщенности футера */
+@keyframes hueShift {
+  0%, 100% { filter: saturate(1); }
+  50% { filter: saturate(1.15); }
+}
+.footer-main:hover {
+  animation: hueShift 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* появление малых постов */
+.small-post {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.small-post:hover {
+  opacity: 0.9;
+  transform: translateY(-4px);
+}
+
+/* пульсация границы поиска с cubic-bezier */
+@keyframes borderPulse {
+  0%, 100% { border-color: #aabcc5; }
+  50% { border-color: var(--muted); }
+}
+.search-form:hover {
+  animation: borderPulse 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+}
+
+/* расширение строки поиска */
+.search-form {
+  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.search-form:hover {
+  width: 102%;
+}
+@media (max-width: 768px) {
+  /* Откл тяжел анимок */
+  .hero-panel,
+  .promo:hover,
+  .footer-main:hover {
+    animation: none;
+  }
+  
+}
