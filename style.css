@@ -1351,3 +1351,39 @@ h3 {
     margin-right: 0;
   }
 }
+навигация 
+.site-nav a:hover {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+кнопка 
+.button:focus,
+.button-small:focus {
+  outline: 3px solid var(--yellow);
+  outline-offset: 4px;
+}
+
+кнопка 
+.button:active,
+.button-small:active {
+  transform: scale(0.96);
+}
+
+ карточки отзывов
+.review-card:nth-child(even) {
+  background: #f0f4f7;
+}
+
+форма подписки
+.signup-form:focus-within {
+  box-shadow: 0 0 0 4px rgba(23, 165, 80, 0.15);
+  border-radius: 8px;
+}
+
+ поле ввода 
+.signup-form input:valid {
+  border-color: var(--green);
+  transition: border-color 0.3s ease;
+}
